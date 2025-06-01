@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="logo">
+    <a href="/">🎬 PhosFilm</a>
+  </div>
+
+  <div class="center-section">
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="/movies/now_playing">Now playing</a></li>
+        <li><a href="/movies/popular">Populares</a></li>
+        <li><a href="/movies/top_rated">Mejor valoradas</a></li>
+        <li><a href="/movies/upcoming">Por venir</a></li>
+      </ul>
+    </nav>
+
+    <form action="/search" method="GET" class="search-form">
+      <input
+        type="text"
+        name="q"
+        placeholder="Buscar película..."
+        required
+      />
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+
+  <div class="auth-buttons">
+    <% if (usuario) { %>
+      <span class="user-name">👤 <%= usuario.nombre %></span>
+      <a href="/logout" class="btn btn-logout">Cerrar sesión</a>
+    <% } else { %>
+      <a href="/login" class="btn btn-login">Login</a>
+      <a href="/register" class="btn btn-register">Register</a>
+    <% } %>
+  </div>
+</header>

@@ -1,0 +1,141 @@
+.header {
+  background-color: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  gap: 20px;
+}
+
+/* Contenedor del menú + buscador juntos */
+.center-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-grow: 1; /* para que use el espacio entre logo y auth-buttons */
+  justify-content: center;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 1.8em;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  color: #d4af37;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  padding: 6px 10px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+  width: 180px;
+  max-width: 100%;
+}
+
+.search-form button {
+  background-color: #d4af37;
+  border: none;
+  padding: 7px 14px;
+  color: #222;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #aa8c2f;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-buttons .btn {
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  border: 2px solid transparent;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: #d4af37;
+  border-color: #d4af37;
+}
+
+.btn-login:hover {
+  background-color: #aa8c2f;
+  color: white;
+  border-color: #aa8c2f;
+}
+
+.btn-register {
+  background-color: #d4af37;
+  color: #222;
+  border-color: #d4af37;
+}
+
+.btn-register:hover {
+  background-color: #aa8c2f;
+  color: white;
+  border-color: #aa8c2f;
+}
+.user-name {
+  font-weight: 500;
+  color: #d4af37;
+  background-color: #333;
+  padding: 7px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #aa8c2f;
+  color: white;
+  border-color: #aa8c2f;
+}

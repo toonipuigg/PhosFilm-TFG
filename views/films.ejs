@@ -1,0 +1,44 @@
+<%- include('components/head') %>
+<body>
+    <%- include('components/header') %>
+
+    <div class="container">
+  <% if (peliculas && peliculas.length > 0) { %>
+    <% peliculas.forEach(pelicula => { %>
+      <div class="card">
+      <div class="card-content">
+
+        <h2 class="card-title"><%= pelicula.title %> (<%= pelicula.release_date %>)</h2>
+        <img src="https://image.tmdb.org/t/p/w200<%= pelicula.poster_path %>" alt="<%= pelicula.title %>">
+        <ul>
+          <li>
+            <span class="value">
+              <span class="star">&#9733;</span>
+              <%= pelicula.vote_average %>
+              <span class="vote-count">(<%= pelicula.vote_count %>)</span>
+            </span>
+          </li>
+          <li><strong class="label">Título original:</strong> <span class="value"><%= pelicula.original_title %></span></li>
+          <li><strong class="label">Lenguaje original:</strong> <span class="value"><%= pelicula.original_language %></span></li>
+          <li><strong class="label">Adulto:</strong> <span class="value"><%= pelicula.adult ? 'Sí' : 'No' %></span></li>
+          <li><strong class="label">Popularidad:</strong> <span class="value"><%= pelicula.popularity %></span></li>
+          <li><span class="label">Géneros:</span> <span class="value"><%= pelicula.genre_names.join(', ') %></span></li>
+          <li><strong class="label">Video:</strong> <span class="value"><%= pelicula.video ? 'Sí' : 'No' %></span></li>
+          <li><strong class="label">Resumen:</strong> <p class="overview"><%= pelicula.overview %></p></li>
+        </ul>
+      </div>
+      <form class="heart-form" action="/favoritos" method="POST">
+        <input type="hidden" name="peliculaId" value="<%= pelicula.id %>">
+        <button type="submit" class="heart-button <%= pelicula.esFavorita ? 'liked' : '' %>">&#10084;</button>
+      </form>
+    </div>
+    <% }); %>
+  <% } else { %>
+    <p>No hay películas para mostrar.</p>
+  <% } %>
+</div>
+<%- include('components/pagination') %>
+  <script src="/js/favoritos.js"></script>
+
+</body>
+</html>

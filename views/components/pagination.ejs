@@ -1,0 +1,27 @@
+<div class="pagination">
+  <% 
+    const maxPagesToShow = 4; // páginas visibles antes de los puntos
+    const showEllipsis = totalPages > maxPagesToShow + 1;
+  %>
+
+  <% if (currentPage > 1) { %>
+    <a href="/movies/<%= category %>?page=<%= currentPage - 1 %>">←</a>
+  <% } %>
+
+  <% for (let i = 1; i <= maxPagesToShow; i++) { %>
+    <% if (i === currentPage) { %>
+      <span class="current"><%= i %></span>
+    <% } else { %>
+      <a href="/movies/<%= category %>?page=<%= i %>"><%= i %></a>
+    <% } %>
+  <% } %>
+
+  <% if (showEllipsis) { %>
+    <span>...</span>
+    <a href="/movies/<%= category %>?page=<%= totalPages %>"><%= totalPages %></a>
+  <% } %>
+
+  <% if (currentPage < totalPages) { %>
+    <a href="/movies/<%= category %>?page=<%= currentPage + 1 %>">→</a>
+  <% } %>
+</div>
